@@ -4,12 +4,12 @@ body {
 }
 
 .zf-green {
-    color: #68b604;
+    color: cyan;
 }
 
 .btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-color: cyan;
+  background-image: -moz-linear-gradient(top,red, cyan);
   background-image: -ms-linear-gradient(top, #70d900, #57a900);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
   background-image: -webkit-linear-gradient(top, #70d900, #57a900);
@@ -23,15 +23,20 @@ body {
 .btn-success.active,
 .btn-success.disabled,
 .btn-success[disabled] {
-  background-color: #57a900;
+  background-color: cyan;
 }
 
 .btn-success:active, .btn-success.active {
-  background-color: #57a900;
+  background-color: cyan;
 }
 
 div.container a.brand {
     background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
     margin-left: 0;
     padding: 8px 20px 12px 40px;
+}
+
+
+.table {
+    background-color: grey; 
 }

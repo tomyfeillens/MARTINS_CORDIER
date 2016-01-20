@@ -1,0 +1,11 @@
+
+Login Success.
+<br />
+
+<a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>">Logout</a>
+
+<?php $this->inlineScript()->captureStart(); ?>
+<?php foreach($messages as $message): ?>
+    Materialize.toast("<?= $this->escapeHtml($message) ?>", 6000);
+<?php endforeach; ?>
+<?php $this->inlineScript()->captureEnd(); ?> 

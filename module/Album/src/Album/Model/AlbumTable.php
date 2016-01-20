@@ -11,10 +11,27 @@ namespace Album\Model;
      {
          $this->tableGateway = $tableGateway;
      }
+     
+    /* public function getAlbumByUser($user){
+         $id  = (int) $id;
+         $rowset = $this->tableGateway->select(array('users_id' => $user->id));
+         $row = $rowset->current();
+         if (!$row) {
+             throw new \Exception("Could not find row $id");
+         }
+         return $row;
+     }*/
 
      public function fetchAll()
      {
          $resultSet = $this->tableGateway->select();
+         return $resultSet;
+     }
+     
+     public function fetchUser($user_id)
+     {
+         
+         $resultSet = $this->tableGateway->select($where = "users_id=".$user_id);
          return $resultSet;
      }
 
@@ -34,6 +51,7 @@ namespace Album\Model;
          $data = array(
              'artist' => $album->artist,
              'title'  => $album->title,
+            // 'users'  => $id,  
          );
 
          $id = (int) $album->id;

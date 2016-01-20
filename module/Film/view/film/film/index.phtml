@@ -1,0 +1,30 @@
+<?php
+ // module/Film/view/film/film/index.phtml:
+
+ $title = 'Mes films';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('film', array('action'=>'add'));?>">Ajouter un nouveau film</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Titre</th>
+     <th>Réalisateur</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($films as $film) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($film->title);?></td>
+     <td><?php echo $this->escapeHtml($film->artist);?></td>
+     <td>
+         <a href="<?php echo $this->url('film',
+             array('action'=>'edit', 'id' => $film->id));?>">Edit</a>
+         <a href="<?php echo $this->url('film',
+             array('action'=>'delete', 'id' => $film->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>

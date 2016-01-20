@@ -26,7 +26,7 @@
              'name' => 'artist',
              'type' => 'Text',
              'options' => array(
-                 'label' => 'Artist',
+                 'label' => 'Artiste',
              ),
          ));
          $this->add(array(

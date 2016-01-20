@@ -3,6 +3,9 @@ return array(
      'modules' => array(
          'Application',
          'Album',
+         'SanAuth',
+         'Film',
+         'Livre'
          // <-- Add this line
          ),
      'module_listener_options' => array(

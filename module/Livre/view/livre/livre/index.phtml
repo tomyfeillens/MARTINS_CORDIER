@@ -1,0 +1,30 @@
+<?php
+ // module/Livre/view/livre/livre/index.phtml:
+
+ $title = 'Mes livres';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('livre', array('action'=>'add'));?>">Ajouter un nouveau livre</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Titre</th>
+     <th>Auteur</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($livres as $livre) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($livre->title);?></td>
+     <td><?php echo $this->escapeHtml($livre->artist);?></td>
+     <td>
+         <a href="<?php echo $this->url('livre',
+             array('action'=>'edit', 'id' => $livre->id));?>">Edit</a>
+         <a href="<?php echo $this->url('livre',
+             array('action'=>'delete', 'id' => $livre->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
